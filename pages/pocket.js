@@ -10,7 +10,7 @@ export default () => (
           <p>First Line 
             Second Line
           </p>
-          <a href="#!"><i className="material-icons">Continue</i></a>
+          <a className="pocketread" href="#!"><i className="material-icons">chrome_reader_mode</i></a>
         </li>
       </div>
 
@@ -21,7 +21,7 @@ export default () => (
           <p>First Line 
             Second Line
           </p>
-          <a href="#!"><i className="material-icons">Continue</i></a>
+          <a className="pocketread" href="#!"><i className="material-icons">chrome_reader_mode</i></a>
         </li>
       </div>
       

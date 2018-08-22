@@ -53,7 +53,19 @@ const Card = () => (
         </div>
       </div>
     </div>
-
+    {/* <div className="pagination">
+      <a href="#"> <i className="material-icons">arrow_back</i> </a>
+      <a href="#"> <i className="material-icons">arrow_forward</i> </a>
+    </div> */}
+    <ul className="pagination">
+    <li className="wave-effect"><a href="#!"><i className="material-icons">chevron_left</i></a></li>
+    <li className="waves-effect"><a href="#!"><i className="material-icons">brightness_7</i></a></li>
+    <li className="waves-effect"><a href="#!"><i className="material-icons">brightness_5</i></a></li>
+    <li className="waves-effect"><a href="#!"><i className="material-icons">brightness_5</i></a></li>
+    <li className="waves-effect"><a href="#!"><i className="material-icons">brightness_5</i></a></li>
+    <li className="waves-effect"><a href="#!"><i className="material-icons">brightness_5</i></a></li>
+    <li className="waves-effect"><a href="#!"><i className="material-icons">chevron_right</i></a></li>
+  </ul>
   </div>
 )
 
