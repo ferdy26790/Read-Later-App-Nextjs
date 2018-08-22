@@ -1,90 +1,78 @@
 import React from 'react'
 import Link from 'next/link'
-import Head from '../components/head'
-import Nav from '../components/nav'
-
-const Home = () => (
-  <div>
-    <Head title="Home" />
-    <Nav />
-
-    <div className="hero">
-      <h1 className="title">Welcome to Next!</h1>
-      <p className="description">
-        To get started, edit <code>pages/index.js</code> and save to reload.
-      </p>
-
-      <div className="row">
-        <Link href="https://github.com/zeit/next.js#getting-started">
-          <a className="card">
-            <h3>Getting Started &rarr;</h3>
-            <p>Learn more about Next on Github and in their examples</p>
-          </a>
-        </Link>
-        <Link href="https://open.segment.com/create-next-app">
-          <a className="card">
-            <h3>Examples &rarr;</h3>
-            <p>
-              Find other example boilerplates on the{' '}
-              <code>create-next-app</code> site
-            </p>
-          </a>
-        </Link>
-        <Link href="https://github.com/segmentio/create-next-app">
-          <a className="card">
-            <h3>Create Next App &rarr;</h3>
-            <p>Was this tool helpful? Let us know how we can improve it</p>
-          </a>
-        </Link>
+import '../scss/style.scss'
+const Card = () => (
+  <div className="row">
+    <div className="col s12 m12">
+      <div className="card">
+        <div className="card-image">
+          <img src="https://usatftw.files.wordpress.com/2014/06/usp-nba_-los-angeles-lakers-at-sacramento-kings.jpg?w=1000&h=600&crop=1"/>
+          <span className="card-title">Card Title</span>
+        </div>
+        <div className="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div className="card-action">
+          <a href="#">Add To Pocket</a>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </div>
+    
+    <div className="col s12 m12">
+      <div className="card">
+        <div className="card-image">
+          <img src="http://i1.jpopasia.com/assets/1/21366-beatcrusaders-9n46.jpg"/>
+          <span className="card-title">Card Title</span>
+        </div>
+        <div className="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div className="card-action">
+          <a href="#">Add To Pocket</a>
+          <a href="#">Read More</a>
+        </div>
       </div>
     </div>
 
-    <style jsx>{`
-      .hero {
-        width: 100%;
-        color: #333;
-      }
-      .title {
-        margin: 0;
-        width: 100%;
-        padding-top: 80px;
-        line-height: 1.15;
-        font-size: 48px;
-      }
-      .title,
-      .description {
-        text-align: center;
-      }
-      .row {
-        max-width: 880px;
-        margin: 80px auto 40px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
-      .card {
-        padding: 18px 18px 24px;
-        width: 220px;
-        text-align: left;
-        text-decoration: none;
-        color: #434343;
-        border: 1px solid #9b9b9b;
-      }
-      .card:hover {
-        border-color: #067df7;
-      }
-      .card h3 {
-        margin: 0;
-        color: #067df7;
-        font-size: 18px;
-      }
-      .card p {
-        margin: 0;
-        padding: 12px 0 0;
-        font-size: 13px;
-        color: #333;
-      }
-    `}</style>
+  <div className="col s12 m12">
+      <div className="card">
+        <div className="card-image">
+          <img src="https://i.gyazo.com/af01c4b6cfa67f35cb44c50e86d9004f.png"/>
+          <span className="card-title">Card Title</span>
+        </div>
+        <div className="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div className="card-action">
+          <a href="#">Add To Pocket</a>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </div>
+    {/* <div className="pagination">
+      <a href="#"> <i className="material-icons">arrow_back</i> </a>
+      <a href="#"> <i className="material-icons">arrow_forward</i> </a>
+    </div> */}
+    <ul className="pagination">
+    <li className="wave-effect"><a href="#!"><i className="material-icons">chevron_left</i></a></li>
+    <li className="waves-effect"><a href="#!"><i className="material-icons">brightness_7</i></a></li>
+    <li className="waves-effect"><a href="#!"><i className="material-icons">brightness_5</i></a></li>
+    <li className="waves-effect"><a href="#!"><i className="material-icons">brightness_5</i></a></li>
+    <li className="waves-effect"><a href="#!"><i className="material-icons">brightness_5</i></a></li>
+    <li className="waves-effect"><a href="#!"><i className="material-icons">brightness_5</i></a></li>
+    <li className="waves-effect"><a href="#!"><i className="material-icons">chevron_right</i></a></li>
+  </ul>
+  </div>
+)
+
+const Home = () => (
+  <div className="container">
+    <h1>headlines</h1>
+    <Card classname="card"/>
   </div>
 )
 

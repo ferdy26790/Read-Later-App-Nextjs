@@ -10,49 +10,17 @@ const links = [
 
 const Nav = () => (
   <nav>
-    <ul>
-      <li>
-        <Link prefetch href="/">
-          <a>Home</a>
+    <div className="nav-wrapper">
+      <a className="brand-logo center">Pocket News</a>
+      <ul id="nav-mobile" className="left hide-on-med-and-down">
+        <Link href="/">
+          <li><a>Home</a></li>
         </Link>
-      </li>
-      <ul>
-        {links.map(({ key, href, label }) => (
-          <li key={key}>
-            <Link href={href}>
-              <a>{label}</a>
-            </Link>
-          </li>
-        ))}
+        <Link href="/pocket">
+          <li><a>My Pocket</a></li>
+        </Link>
       </ul>
-    </ul>
-
-    <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-          Helvetica, sans-serif;
-      }
-      nav {
-        text-align: center;
-      }
-      ul {
-        display: flex;
-        justify-content: space-between;
-      }
-      nav > ul {
-        padding: 4px 16px;
-      }
-      li {
-        display: flex;
-        padding: 6px 8px;
-      }
-      a {
-        color: #067df7;
-        text-decoration: none;
-        font-size: 13px;
-      }
-    `}</style>
+    </div>
   </nav>
 )
 
