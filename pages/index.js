@@ -1,79 +1,41 @@
 import React from 'react'
 import Link from 'next/link'
+import axios from 'axios'
 import '../scss/style.scss'
-const Card = () => (
+const Card = (props) => (
   <div className="row">
     <div className="col s12 m12">
       <div className="card">
         <div className="card-image">
-          <img src="https://usatftw.files.wordpress.com/2014/06/usp-nba_-los-angeles-lakers-at-sacramento-kings.jpg?w=1000&h=600&crop=1"/>
-          <span className="card-title">Card Title</span>
+          <img src={props.news.urlToImage}/>
+          <span className="card-title">{props.news.title}</span>
         </div>
         <div className="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+          <p>{props.news.description}</p>
         </div>
         <div className="card-action">
           <a href="#">Add To Pocket</a>
-          <a href="#">Read More</a>
+          <a href={props.news.url}>Read More</a>
         </div>
       </div>
     </div>
-    
-    <div className="col s12 m12">
-      <div className="card">
-        <div className="card-image">
-          <img src="http://i1.jpopasia.com/assets/1/21366-beatcrusaders-9n46.jpg"/>
-          <span className="card-title">Card Title</span>
-        </div>
-        <div className="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-        </div>
-        <div className="card-action">
-          <a href="#">Add To Pocket</a>
-          <a href="#">Read More</a>
-        </div>
-      </div>
-    </div>
-
-  <div className="col s12 m12">
-      <div className="card">
-        <div className="card-image">
-          <img src="https://i.gyazo.com/af01c4b6cfa67f35cb44c50e86d9004f.png"/>
-          <span className="card-title">Card Title</span>
-        </div>
-        <div className="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-        </div>
-        <div className="card-action">
-          <a href="#">Add To Pocket</a>
-          <a href="#">Read More</a>
-        </div>
-      </div>
-    </div>
-    {/* <div className="pagination">
-      <a href="#"> <i className="material-icons">arrow_back</i> </a>
-      <a href="#"> <i className="material-icons">arrow_forward</i> </a>
-    </div> */}
-    <ul className="pagination">
-    <li className="wave-effect"><a href="#!"><i className="material-icons">chevron_left</i></a></li>
-    <li className="waves-effect"><a href="#!"><i className="material-icons">brightness_7</i></a></li>
-    <li className="waves-effect"><a href="#!"><i className="material-icons">brightness_5</i></a></li>
-    <li className="waves-effect"><a href="#!"><i className="material-icons">brightness_5</i></a></li>
-    <li className="waves-effect"><a href="#!"><i className="material-icons">brightness_5</i></a></li>
-    <li className="waves-effect"><a href="#!"><i className="material-icons">brightness_5</i></a></li>
-    <li className="waves-effect"><a href="#!"><i className="material-icons">chevron_right</i></a></li>
-  </ul>
   </div>
 )
 
-const Home = () => (
+const Index = (props) => (
   <div className="container">
     <h1>headlines</h1>
-    <Card classname="card"/>
+    {console.log(props.data)}
+    {props.data.map(news => (
+      <Card className="card" key={news.source.id} news={news}/>
+    ))}
   </div>
 )
 
-export default Home
+Index.getInitialProps = async () => {
+  const res = await axios.get('https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=1bca106cc3d84b92ac87c437194ab5e6')
+  res.data.articles.map((news, idx) => news.source.id = idx+1 )
+  return {data : res.data.articles}
+}
+
+export default Index
