@@ -49,6 +49,10 @@ Nav {
   text-align: center;
 }
 
+h1{
+  text-align: center
+}
+
 .span {
   background-color: black
 }
@@ -56,6 +60,16 @@ Nav {
 .pocketread {
   color: black;
   :hover{
-    color: grey
+    color: grey;
+    cursor: pointer;
   }
+}
+
+.card .card-image .card-title {
+  color: rgba(0, 0, 0, 0.87);
+  bottom: 0;
+  position: relative;
+  left: 0;
+  max-width: 100%;
+  padding: 24px;
 }
